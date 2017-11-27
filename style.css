@@ -17,9 +17,10 @@ body {
 }
 
 a {
-  text-decoration: none;
+  // text-decoration: none;
   outline: 0;
   color:inherit;
+  font-weight: bold;
 }
 
 p {
@@ -242,6 +243,10 @@ footer {
   border-top:1px solid #CCC;
   font-size: 10px;
   overflow: hidden;
+}
+
+footer p {
+  margin:8px 0;
 }
 
 footer div {
