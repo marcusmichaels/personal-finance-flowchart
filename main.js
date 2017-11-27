@@ -104,12 +104,15 @@ function showPhase(phase) {
 
     case phaseFourteenB:
       addArrow(q10, 'question-10');
+      addArrow(q11, 'question-11');
+
       break;
 
     case phaseFifteen:
       addArrow(q6, 'question-6');
       addArrow(q8, 'question-8');
       addArrow(q9, 'question-9');
+      addArrow(q11, 'question-11');
       addArrow(q12, 'question-12');
       break;
 
