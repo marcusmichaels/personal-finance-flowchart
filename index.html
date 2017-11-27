@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FIRE Flow</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Free Web tutorials">
+  <meta name="keywords" content="FIRE, FIRE UK, FIREUK, Financial Independence, Retiring Early, Retirement Early, FIREUK, Financial Flowchart, Flowchart, Money, Advice, UKPersonalFinance, Personal Finance, Reddit, GitHub">
+  <meta name="author" content="Marcus Michaels">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script defer type="text/javascript" src="main.js"></script>
+</head>
+<body>
+  <section class="overview">
+    <div class="overview__step step-0">
+      <p>
+        <strong>Step 0:</strong> Budget and reduce expenses, set realistic goals
+      </p>
+    </div>
+    <div class="overview__step step-1">
+      <p>
+        <strong>Step 1:</strong> Build an Emergency Fund
+      </p>
+    </div>
+    <div class="overview__step step-2">
+      <p>
+        <strong>Step 2:</strong> Employer Matched Pension Contributions
+      </p>
+    </div>
+    <div class="overview__step step-3">
+      <p>
+        <strong>Step 3:</strong> Pay down debts
+      </p>
+    </div>
+    <div class="overview__step step-4">
+      <p>
+        <strong>Step 4:</strong> Save for Retirement
+      </p>
+    </div>
+  </section>
+
+  <section id="intro">
+    <div class="intro__small-rectangle" onclick="showPhase(phaseOne);">
+      <p>
+        Start FIREFlow
+      </p>
+    </div>
+  </section>
+
+  <section id="phase-one" class="flow-container">
+    <div class="flow-container__large-rectangle blue arrow-down">
+      <p>
+        Know where your money is going by creating a solid budget plan
+      </p>
+    </div>
+    <div class="flow-container__small-rectangle blue arrow-down">
+      <p>
+        Buy Food
+      </p>
+    </div>
+    <div class="flow-container__small-rectangle blue arrow-down">
+      <p>
+        Pay Rent/Mortgage
+      </p>
+    </div>
+    <div class="flow-container__small-rectangle blue arrow-down">
+      <p>
+        Pay Essential Bills
+      </p>
+    </div>
+    <div class="flow-container__small-rectangle blue arrow-down">
+      <p>
+        Pay Income Dependant Bills<br>(like transport to work)
+      </p>
+    </div>
+    <div class="flow-container__small-rectangle blue arrow-down">
+      <p>
+        Make minimum payments on all debts
+      </p>
+    </div>
+    <div class="flow-container__small-rectangle green arrow-down">
+      <p>
+        Build basic Emergency Fund<br>(one month's outgoings)
+      </p>
+    </div>
+    <div class="flow-container__small-rectangle blue arrow-down">
+      <p>
+        Pay non-essential bills in full<br>(internet, phone, TV)
+      </p>
+    </div>
+    <div id="question-1" class="flow-container__large-rectangle purple">
+      <p>
+        Do you have any high interest (10%+) debt?
+      </p>
+      <div class="choices">
+        <div class="choice" onclick="showPhase(phaseTwo)">Yes</div>
+        <div class="choice" onclick="showPhase(phaseThree)">No</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="phase-two" class="flow-container">
+    <div class="flow-container__small-rectangle blue arrow-down">
+      <p>
+        Consider Avalanche Method to pay off highest interest debt first.
+      </p>
+    </div>
+
+    <div class="flow-container__large-rectangle purple choice" onclick="continueFlow(this, phaseThree)">
+      <p>
+        Okay, what's next?
+      </p>
+    </div>
+  </section>
+
+  <section id="phase-three" class="flow-container">
+    <div class="flow-container__small-rectangle orange arrow-down">
+      <p>
+        Ensure you are (auto)enrolled in company pension. Take advantage of any company contributions available.
+      </p>
+    </div>
+    <div class="flow-container__small-rectangle green arrow-down">
+      <p>
+        Build basic Emergency Fund<br>(3-6 months' outgoings)
+      </p>
+    </div>
+    <div id="question-2" class="flow-container__large-rectangle purple">
+      <p>
+        Do you have any moderate interest (4%+) debt?
+      </p>
+      <div class="choices">
+        <div class="choice" onclick="showPhase(phaseFour)">Yes</div>
+        <div class="choice" onclick="showPhase(phaseFive)">No</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="phase-four" class="flow-container">
+    <div class="flow-container__small-rectangle blue arrow-down">
+      <p>
+        Consider Avalanche Method to pay off highest interest debt first.
+      </p>
+    </div>
+
+    <div class="flow-container__large-rectangle purple choice" onclick="continueFlow(this, phaseFive)">
+      <p>
+        Sure, then what?
+      </p>
+    </div>
+
+  </section>
+
+  <section id="phase-five" class="flow-container">
+    <div id="question-3" class="flow-container__large-rectangle purple">
+      <p>
+        Are you saving to buy your FIRST home?
+      </p>
+      <div class="choices">
+        <div class="choice" onclick="showPhase(phaseSix)">Yes</div>
+        <div class="choice" onclick="showPhase(phaseSeven)">No</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="phase-six" class="flow-container">
+    <div class="flow-container__small-rectangle purple arrow-down">
+      <p>
+        Consider saving via a Help to Buy: ISA / LISA
+      </p>
+    </div>
+    <div class="flow-container__large-rectangle purple choice" onclick="continueFlow(this, phaseSeven)">
+      <p>
+        I'll look into it. What now?
+      </p>
+    </div>
+  </section>
+
+  <section id="phase-seven" class="flow-container">
+    <div id="question-4" class="flow-container__large-rectangle blue">
+      <p>
+        Do you have short term goals?
+      </p>
+      <div class="choices">
+        <div class="choice" onclick="showPhase(phaseEight)">Yes</div>
+        <div class="choice" onclick="showPhase(phaseNine)">No</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="phase-eight" class="flow-container">
+    <div class="flow-container__small-rectangle blue arrow-down">
+      <p>
+        Consider high interest current or regular savers accounts
+      </p>
+    </div>
+    <div class="flow-container__large-rectangle blue choice" onclick="continueFlow(this, phaseNine)">
+      <p>
+        Will do. Let's keep moving...
+      </p>
+    </div>
+  </section>
+
+  <section id="phase-nine" class="flow-container">
+    <div id="question-5" class="flow-container__large-rectangle blue">
+      <p>
+        Do you have long term goals?
+      </p>
+      <div class="choices">
+        <div class="choice" onclick="showPhase(phaseTen)">Yes</div>
+        <div class="choice" onclick="showPhase(endpointOne)">Nope!</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="endpoint-one" class="flow-container">
+    <div class="flow-container__small-rectangle">
+      <p>
+        Congrats. Get out there, spend and enjoy your money!
+      </p>
+    </div>
+    <div class="flow-container__large-rectangle purple choice" onclick="continueFlow(this, phaseTen)">
+      <p>
+        Awesome! Can I continue anyway?
+      </p>
+    </div>
+  </section>
+
+  <section id="phase-ten" class="flow-container">
+    <div id="question-6" class="flow-container__large-rectangle red">
+      <p>
+        Is one of your goals retirement?
+      </p>
+      <div class="choices">
+        <div class="choice" onclick="showPhase(phaseEleven)">Yes</div>
+        <div class="choice" onclick="showPhase(phaseFifteen)">No / Retiring Early</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="phase-eleven" class="flow-container">
+    <div id="question-7" class="flow-container__large-rectangle red">
+      <p>
+        Is total cost of employer pension ≤ 0.5%?
+      </p>
+      <div class="choices">
+        <div class="choice" onclick="showPhase(phaseTwelve)">No</div>
+        <div class="choice" onclick="showPhase(phaseThirteen)">Yes</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="phase-twelve" class="flow-container">
+    <div class="flow-container__small-rectangle red arrow-down">
+      <p>
+        Open a SIPP and invest in low-cost global index trackers
+      </p>
+    </div>
+   <div id="question-8" class="flow-container__large-rectangle red">
+      <p>
+        Is your pension full or are you on track for £1m on your current contributions?
+      </p>
+      <div class="choices">
+        <div class="choice" onclick="showPhase(phaseFourteen)">No</div>
+        <div class="choice" onclick="showPhase(phaseFifteen)">Yes</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="phase-thirteen" class="flow-container">
+    <div class="flow-container__small-rectangle red arrow-down">
+      <p>
+        Additional contributions to company pension
+      </p>
+    </div>
+    <div id="question-9" class="flow-container__large-rectangle red">
+      <p>
+        Is your pension full or are you on track for £1m on your current contributions?
+      </p>
+      <div class="choices">
+        <div class="choice" onclick="showPhase(phaseFourteen)">No</div>
+        <div class="choice" onclick="showPhase(phaseFifteen)">Yes</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="phase-fourteen" class="flow-container">
+    <div id="question-10" class="flow-container__large-rectangle red">
+      <p>
+        Are you on track for your retirement goal?
+      </p>
+      <div class="choices">
+        <div class="choice" onclick="showPhase(phaseFourteenA)">Yes</div>
+        <div class="choice" onclick="showPhase(phaseFourteenB)">No</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="phase-fourteen-a" class="flow-container">
+    <div id="question-11" class="flow-container__large-rectangle red">
+      <p>
+        Have you maxed out your SIPP?
+      </p>
+      <div class="choices">
+        <div class="choice" onclick="showPhase(phaseFifteen)">Yes</div>
+        <a href="#phase-twelve" onclick="showPhase(phaseTwelve)" class="choice">No</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="phase-fourteen-b" class="flow-container">
+    
+    <div id="question-12" class="flow-container__large-rectangle red">
+      <p>
+        Increase contributions to SIPP or company pension
+      </p>
+      <div class="choices">
+        <div class="choice" onclick="continueFlow(this, phaseFifteen)">Continue...</div>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="phase-fifteen" class="flow-container">
+    <div class="flow-container__small-rectangle blue arrow-down">
+      <p>
+        S&amp;S ISA<br>Invest in low-cost global index trackers
+      </p>
+    </div>
+    <div class="flow-container__small-rectangle blue arrow-down">
+      <p>
+        Buy the same things in your S&amp;S ISA but in a taxable account harvest dividend / CGT allowance
+      </p>
+    </div>
+    <div class="flow-container__small-rectangle arrow-down">
+      <p>
+        Seek financial advice!
+      </p>
+    </div>
+    <div class="flow-container__small-rectangle blue ">
+      <p>
+        High Risk Investments to reduce tax: VCT / EIS / SEIS
+      </p>
+    </div>
+  </section>
+
+
+
+  <footer>
+    <div class="disclaimer">
+      <p>
+        <em>This flowchart is for informational purposes only and should not be mistaken for, or replace, financial advice or guidance. The author assumes no liability for this. Always do your own research.</em>
+      </p>
+    </div>
+
+    <div class="copyright">
+      <p>
+        Inspired by the original <a href="https://i.imgur.com/BfHzwr9.png" target="_blank" title="FIRE UK Flowchart">UKPersonalFinance Flowchart</a> – with thanks to <a href="https://www.reddit.com/r/UKPersonalFinance/" target="_blank" title="UKPersonalFinance on Reddit">r/UKPersonalFinance</a> &amp; <a href="https://www.reddit.com/r/FIREUK/" target="_blank" title="FIREUK on Reddit">r/FIREUK</a>
+      </p>
+      <p>Contribute to this project on GitHub</p>
+    </div>
+  </footer>
+</body>
+</html>
+
