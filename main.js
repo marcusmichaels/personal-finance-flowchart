@@ -99,7 +99,7 @@ function showPhase(phase) {
       break;
 
     case phaseFourteenA:
-      addArrow(q10, 'question-11');
+      addArrow(q10, 'question-10');
       break;
 
     case phaseFourteenB:
