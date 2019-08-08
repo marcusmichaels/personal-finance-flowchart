@@ -22,21 +22,43 @@ var intro         = document.getElementById('intro'),
 
     q1 = q2 = q3 = q4 = q5 = q6 = q7 = q8 = q9 = q10 = q11 = q12 = false;
 
+    flowPath = [intro];
+
 function addArrow(q,x) {
   var qs = "#" + x + " .choices";
   if (!q) {
-    document.getElementById(x).className += " arrow-down";
-    document.querySelectorAll(qs)[0].style.display="none";
+    document.getElementById(x).classList.add("arrow-down")
     q = true;
   }
 }
 
-function continueFlow(e, phase) {
-  e.outerHTML = "";
-  showPhase(phase);
+function hideLaterPhases(q, phase) {
+  resetQuestions(phase);
+  i = flowPath.indexOf(phase) + 1;
+  if (i < 0) return;
+  
+  noPhases = flowPath.length
+  for (i; i < noPhases; i++) {
+    e = flowPath.pop();
+    resetQuestions(e);
+    e.style.display = "none";
+    e.style.opacity = 0;
+  }
+
+  q.classList.add("selected");
+}
+
+function resetQuestions(phase){
+  allChildren = phase.getElementsByTagName('div');
+  for (var i = 0; i < allChildren.length; i++) {
+    div = allChildren[i];
+    if (div.classList.contains("choice")) div.classList.remove("selected");
+    if (div.id.search("question") == 0)   div.classList.remove("arrow-down");
+  }
 }
 
 function showPhase(phase) {
+  flowPath.push(phase)
   phase.style.display="block";
 
   switch(phase) {

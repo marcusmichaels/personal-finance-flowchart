@@ -52,7 +52,7 @@
   </section>
 
   <section id="intro">
-    <div class="intro__small-rectangle" onclick="showPhase(phaseOne);">
+    <div class="intro__small-rectangle" onclick="hideLaterPhases(this, intro); showPhase(phaseOne);">
       <p>
         Start Flowchart
       </p>
@@ -105,8 +105,8 @@
         Do you have any high interest (10%+) debt?
       </p>
       <div class="choices">
-        <div class="choice" onclick="showPhase(phaseTwo)">Yes</div>
-        <div class="choice" onclick="showPhase(phaseThree)">No</div>
+        <div class="choice" onclick="hideLaterPhases(this, phaseOne); showPhase(phaseTwo)">Yes</div>
+        <div class="choice" onclick="hideLaterPhases(this, phaseOne); showPhase(phaseThree)">No</div>
       </div>
     </div>
   </section>
@@ -118,7 +118,7 @@
       </p>
     </div>
 
-    <div class="flow-container__large-rectangle purple choice" onclick="continueFlow(this, phaseThree)">
+    <div class="flow-container__large-rectangle purple choice" onclick="hideLaterPhases(this, phaseTwo); showPhase(phaseThree)">
       <p>
         Okay, what's next?
       </p>
@@ -141,8 +141,8 @@
         Do you have any moderate interest (4%+) debt?
       </p>
       <div class="choices">
-        <div class="choice" onclick="showPhase(phaseFour)">Yes</div>
-        <div class="choice" onclick="showPhase(phaseFive)">No</div>
+        <div class="choice" onclick="hideLaterPhases(this, phaseThree); showPhase(phaseFour)">Yes</div>
+        <div class="choice" onclick="hideLaterPhases(this, phaseThree); showPhase(phaseFive)">No</div>
       </div>
     </div>
   </section>
@@ -154,7 +154,7 @@
       </p>
     </div>
 
-    <div class="flow-container__large-rectangle purple choice" onclick="continueFlow(this, phaseFive)">
+    <div class="flow-container__large-rectangle purple choice" onclick="hideLaterPhases(this, phaseFour); showPhase(phaseFive)">
       <p>
         Sure, then what?
       </p>
@@ -168,8 +168,8 @@
         Are you saving to buy your FIRST home?
       </p>
       <div class="choices">
-        <div class="choice" onclick="showPhase(phaseSix)">Yes</div>
-        <div class="choice" onclick="showPhase(phaseSeven)">No</div>
+        <div class="choice" onclick="hideLaterPhases(this, phaseFive); showPhase(phaseSix)">Yes</div>
+        <div class="choice" onclick="hideLaterPhases(this, phaseFive); showPhase(phaseSeven)">No</div>
       </div>
     </div>
   </section>
@@ -180,7 +180,7 @@
         Consider saving via a Help to Buy: <a href="https://www.reddit.com/r/UKPersonalFinance/wiki/isa" title="ISA" target="_blank">ISA</a> / <a href="https://www.reddit.com/r/UKPersonalFinance/wiki/lisa" title="ISA" target="_blank">LISA</a>
       </p>
     </div>
-    <div class="flow-container__large-rectangle purple choice" onclick="continueFlow(this, phaseSeven)">
+    <div class="flow-container__large-rectangle purple choice" onclick="hideLaterPhases(this, phaseSix); showPhase(phaseSeven)">
       <p>
         I'll look into it. What now?
       </p>
@@ -193,8 +193,8 @@
         Do you have short term goals?
       </p>
       <div class="choices">
-        <div class="choice" onclick="showPhase(phaseEight)">Yes</div>
-        <div class="choice" onclick="showPhase(phaseNine)">No</div>
+        <div class="choice" onclick="hideLaterPhases(this, phaseSeven); showPhase(phaseEight)">Yes</div>
+        <div class="choice" onclick="hideLaterPhases(this, phaseSeven); showPhase(phaseNine)">No</div>
       </div>
     </div>
   </section>
@@ -205,7 +205,7 @@
         Consider high interest current or regular savers accounts
       </p>
     </div>
-    <div class="flow-container__large-rectangle blue choice" onclick="continueFlow(this, phaseNine)">
+    <div class="flow-container__large-rectangle blue choice" onclick="hideLaterPhases(this, phaseEight); showPhase(phaseNine)">
       <p>
         Will do. Let's keep moving...
       </p>
@@ -218,8 +218,8 @@
         Do you have long term goals?
       </p>
       <div class="choices">
-        <div class="choice" onclick="showPhase(phaseTen)">Yes</div>
-        <div class="choice" onclick="showPhase(endpointOne)">Nope!</div>
+        <div class="choice" onclick="hideLaterPhases(this, phaseNine); showPhase(phaseTen)">Yes</div>
+        <div class="choice" onclick="hideLaterPhases(this, phaseNine); showPhase(endpointOne)">Nope!</div>
       </div>
     </div>
   </section>
@@ -230,7 +230,7 @@
         Congrats. Get out there, spend and enjoy your money!
       </p>
     </div>
-    <div class="flow-container__large-rectangle purple choice" onclick="continueFlow(this, phaseTen)">
+    <div class="flow-container__large-rectangle purple choice" onclick="hideLaterPhases(this, endpointOne); showPhase(phaseTen)">
       <p>
         Awesome! Can I continue anyway?
       </p>
@@ -243,8 +243,8 @@
         Is one of your goals retirement?
       </p>
       <div class="choices">
-        <div class="choice" onclick="showPhase(phaseEleven)">Yes</div>
-        <div class="choice" onclick="showPhase(phaseFifteen)">No / Retiring Early</div>
+        <div class="choice" onclick="hideLaterPhases(this, phaseTen); showPhase(phaseEleven)">Yes</div>
+        <div class="choice" onclick="hideLaterPhases(this, phaseTen); showPhase(phaseFifteen)">No / Retiring Early</div>
       </div>
     </div>
   </section>
@@ -255,8 +255,8 @@
         Are the <a href="https://www.reddit.com/r/ukpersonalfinance/wiki/fees" target="_blank" title="Know your fees">total costs</a> of your employer pension ≤ 0.5%?
       </p>
       <div class="choices">
-        <div class="choice" onclick="showPhase(phaseThirteen)">Yes</div>
-        <div class="choice" onclick="showPhase(phaseTwelve)">No</div>
+        <div class="choice" onclick="hideLaterPhases(this, phaseEleven); showPhase(phaseThirteen)">Yes</div>
+        <div class="choice" onclick="hideLaterPhases(this, phaseEleven); showPhase(phaseTwelve)">No</div>
       </div>
     </div>
   </section>
@@ -272,8 +272,8 @@
         Is your pension full or are you on track for £1m on your current contributions?
       </p>
       <div class="choices">
-        <div class="choice" onclick="showPhase(phaseFifteen)">Yes</div>
-        <div class="choice" onclick="showPhase(phaseFourteen)">No</div>
+        <div class="choice" onclick="hideLaterPhases(this, phaseTwelve); showPhase(phaseFifteen)">Yes</div>
+        <div class="choice" onclick="hideLaterPhases(this, phaseTwelve); showPhase(phaseFourteen)">No</div>
       </div>
     </div>
   </section>
@@ -289,8 +289,8 @@
         Is your pension full or are you on track for £1m on your current contributions?
       </p>
       <div class="choices">
-        <div class="choice" onclick="showPhase(phaseFifteen)">Yes</div>
-        <div class="choice" onclick="showPhase(phaseFourteen)">No</div>
+        <div class="choice" onclick="hideLaterPhases(this, phaseThirteen); showPhase(phaseFifteen)">Yes</div>
+        <div class="choice" onclick="hideLaterPhases(this, phaseThirteen); showPhase(phaseFourteen)">No</div>
       </div>
     </div>
   </section>
@@ -301,8 +301,8 @@
         Are you on track for your retirement goal?
       </p>
       <div class="choices">
-        <div class="choice" onclick="showPhase(phaseFourteenA)">Yes</div>
-        <div class="choice" onclick="showPhase(phaseFourteenB)">No</a>
+        <div class="choice" onclick="hideLaterPhases(this, phaseFourteen); showPhase(phaseFourteenA)">Yes</div>
+        <div class="choice" onclick="hideLaterPhases(this, phaseFourteen); showPhase(phaseFourteenB)">No</a>
       </div>
     </div>
   </section>
@@ -313,8 +313,8 @@
         Have you maxed out your SIPP?
       </p>
       <div class="choices">
-        <div class="choice" onclick="showPhase(phaseFifteen)">Yes</div>
-        <div class="choice" onclick="showPhase(phaseFourteenB)">No</div>
+        <div class="choice" onclick="hideLaterPhases(this, phaseFourteenA); showPhase(phaseFifteen)">Yes</div>
+        <div class="choice" onclick="hideLaterPhases(this, phaseFourteenA); showPhase(phaseFourteenB)">No</div>
       </div>
     </div>
   </section>
@@ -326,7 +326,7 @@
         Increase contributions to SIPP or company pension
       </p>
       <div class="choices">
-        <div class="choice" onclick="continueFlow(this, phaseFifteen)">Continue...</div>
+        <div class="choice" onclick="hideLaterPhases(this, phaseFourteenB); showPhase(phaseFifteen)">Continue...</div>
       </div>
     </div>
 
