@@ -27,7 +27,7 @@ var intro         = document.getElementById('intro'),
 function addArrow(q,x) {
   var qs = "#" + x + " .choices";
   if (!q) {
-    document.getElementById(x).classList.add("arrow-down")
+    document.getElementById(x).classList.add("arrow-down");
     q = true;
   }
 }
@@ -53,12 +53,18 @@ function resetQuestions(phase){
   for (var i = 0; i < allChildren.length; i++) {
     div = allChildren[i];
     if (div.classList.contains("choice")) div.classList.remove("selected");
-    if (div.id.search("question") == 0)   div.classList.remove("arrow-down");
+    if (div.id.search("question") == 0 ||
+        div.classList.contains('active')) div.classList.remove("arrow-down");
   }
 }
 
+function continueFlow(e, phase){
+  e.classList.add('arrow-down', 'active');
+  showPhase(phase);
+}
+
 function showPhase(phase) {
-  flowPath.push(phase)
+  flowPath.push(phase);
   phase.style.display="block";
 
   switch(phase) {
