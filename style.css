@@ -232,6 +232,9 @@ section {
   border-top:8px solid #000; 
 }
 
+.selected {
+  background-color: white;
+}
 
 
 footer {
