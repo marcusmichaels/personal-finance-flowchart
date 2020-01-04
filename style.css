@@ -3,13 +3,18 @@ body {
   margin:0;
   padding:0;
 }
-
+ul {
+  display: block;
+  padding:0;
+  list-style: none;
+}
 body {
   font-family: sans-serif;
   line-height: 1.2;
   -webkit-font-smoothing: antialiased;
   font-size: 14px;
   color: #222;
+  min-width: 300px;
 }
 
 * , *:before, *:after {
@@ -17,19 +22,19 @@ body {
 }
 
 a {
-  // text-decoration: none;
+  /* text-decoration: none; */
   outline: 0;
   color:inherit;
   font-weight: bold;
 }
 
 p {
-  margin:0;
+  margin:0.4rem 0;
 }
 
 section {
   width: 90%;
-  max-width: 1380px;
+  /* max-width: 1380px; */
   padding:0 5%;
   margin:10px auto;
 }
@@ -56,36 +61,43 @@ section {
 }
 
 .blue,
-.step-0,
 .intro__small-rectangle:hover {
   color:darkblue;
   background-color:skyblue;
   border-color:darkblue;
 }
 
-.green,
-.step-1 {
+.yellow {
+  color:#2f2b09;
+  background-color:#ffeb3b;
+  border-color:#2f2b09;
+}
+
+.grey {
+  color: #333;
+  background-color: #DDD;
+  border-color: #333;
+}
+
+.green {
   color:darkgreen;
   background-color:lightgreen;
   border-color:darkgreen;
 }
 
-.orange,
-.step-2 {
+.orange {
   color:#ff5200;
   background-color:lightyellow;
   border-color:#ff5200;
 }
 
-.purple,
-.step-3 {
+.purple {
   color:#6e06a2;
-  background-color:violet;
+  background-color:#ffb5ff;
   border-color:#6e06a2;
 }
 
-.red,
-.step-4 {
+.red {
   color:darkred;
   background-color:lightpink;
   border-color:darkred;
@@ -122,13 +134,8 @@ section {
   margin-top:44px;
 }
 
-.flow-container__large-rectangle { 
-  
-}
-
 .flow-container__small-rectangle {
   width: 60%;
-
 }
 
 .arrow-left:before,
@@ -199,7 +206,7 @@ section {
 }
 
 .arrow-up:after {
-  left: :50%;
+  left: 50%;
   top:-43px;
   margin-left:-8px;
 
@@ -220,7 +227,7 @@ section {
 }
 
 .arrow-down:after {
-  left: :50%;
+  left: 50%;
   bottom:-43px;
   margin-left:-8px;
 
@@ -261,18 +268,21 @@ footer div {
 
 
 @media (min-width: 720px) {
+  .overview {
+    text-align: center;
+  }
   .overview__step {
     width: 18%;
-    float: left;
     
     margin: 10px 1%;
     padding:10px;
     border:1px solid;
     border-radius: 3px;
+    vertical-align: top;
 
     min-height: 110px;
 
-    display: table;
+    display: inline-table;
   }
 
   .overview__step p {
@@ -280,5 +290,12 @@ footer div {
     vertical-align: middle;
     text-align: center;
     margin:10px 0;
+  }
+}
+
+@media (min-width:980px) {
+  .overview__step {
+    width: 12%;
+    margin: 10px 0.8%;
   }
 }
