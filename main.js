@@ -19,6 +19,7 @@ var intro         = document.getElementById('intro'),
     phaseSixteen  = document.getElementById('phase-sixteen'),
 
     endpointOne   = document.getElementById('endpoint-one'),
+    endpointTwo   = document.getElementById('endpoint-two'),
 
     q1 = q2 = q3 = q4 = q5 = q6 = q7 = q8 = q9 = q10 = q11 = q12 = false;
 
@@ -133,15 +134,14 @@ function showPhase(phase) {
     case phaseFourteenB:
       addArrow(q10, 'question-10');
       addArrow(q11, 'question-11');
-
       break;
 
     case phaseFifteen:
       addArrow(q6, 'question-6');
       addArrow(q8, 'question-8');
-      addArrow(q9, 'question-9');
       addArrow(q11, 'question-11');
       addArrow(q12, 'question-12');
+      addArrow(q9, 'question-9');
       break;
 
     case phaseSixteen:
